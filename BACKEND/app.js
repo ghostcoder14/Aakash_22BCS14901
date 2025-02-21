@@ -3,7 +3,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 import cors from 'cors';
 
-app.use(cors()); // Enable CORS
+app.use(cors({
+    origin: ['http://deploy-mern-1whq.vercel.app'],
+    methods: ["POST" , "GET"],
+    credentials: true
+})); // Enable CORS
 app.use(express.json()); // Parse JSON request bodies
 
 // Hardcoded user details
